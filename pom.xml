@@ -78,12 +78,6 @@
       <url>http://www.opensource.org/licenses/bsd-license.html</url>
     </license>
   </licenses>
-  <pluginRepositories>
-    <pluginRepository>
-      <id>oss-sonatype-snapshots</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-    </pluginRepository>
-  </pluginRepositories>
   <build>
     <extensions>
       <extension>
@@ -155,14 +149,28 @@
       </plugin>
     </plugins>
   </build>
-  <distributionManagement>
-      <repository>
-          <id>sonatype-nexus</id>
-          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-      </repository>
-      <snapshotRepository>
-          <id>sonatype-nexus-snapshots</id>
-          <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-      </snapshotRepository>
+
+<repositories>
+  <repository>
+    <id>matygo-repo</id>
+    <name>Matygo Repo</name>
+    <url>http://office.matygo.com:8081/nexus/content/groups/matygo-repo/</url>
+  </repository>
+</repositories>
+
+<pluginRepositories>
+  <pluginRepository>
+    <id>matygo-repo</id>
+    <name>Matygo Repo</name>
+    <url>http://office.matygo.com:8081/nexus/content/groups/matygo-repo/</url>
+  </pluginRepository>
+</pluginRepositories>
+
+<distributionManagement>
+  <repository>
+    <id>matygo</id>
+    <name>Matygo Releases</name>
+    <url>http://office.matygo.com:8081/nexus/content/repositories/matygo/</url>
+  </repository>
   </distributionManagement>
 </project>
